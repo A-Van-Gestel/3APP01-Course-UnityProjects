@@ -605,8 +605,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  turnSpeed: 5.5
+  turnSpeed: 35
   horizontalInput: 0
+  forwardInput: 0
 --- !u!54 &540419824
 Rigidbody:
   m_ObjectHideFlags: 0
