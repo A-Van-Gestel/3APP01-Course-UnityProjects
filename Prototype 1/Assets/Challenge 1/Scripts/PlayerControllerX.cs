@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    private float speed = 0.4f;
-    public float rotationSpeed;
-    public float verticalInput;
+    private float _speed = 0.4f;
+    private float _rotationSpeed = 3.0f;
+    private float _verticalInput;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,12 @@ public class PlayerControllerX : MonoBehaviour
     void FixedUpdate()
     {
         // get the user's vertical input
-        verticalInput = Input.GetAxis("Vertical");
+        _verticalInput = Input.GetAxis("Vertical");
 
         // move the plane forward at a constant rate
-        transform.Translate(Vector3.forward * speed);
+        transform.Translate(Vector3.forward * _speed);
 
         // tilt the plane up/down based on up/down arrow keys
-        transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.right * _rotationSpeed * _verticalInput);
     }
 }
