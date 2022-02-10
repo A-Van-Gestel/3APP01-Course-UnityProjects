@@ -594,6 +594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   speed: 10
+  xRange: 15
 --- !u!1001 &727773162
 PrefabInstance:
   m_ObjectHideFlags: 0
