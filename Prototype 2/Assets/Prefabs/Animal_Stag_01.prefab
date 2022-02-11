@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 7954496928992576521}
   - component: {fileID: 7954496928985554753}
   - component: {fileID: 7954496928503038673}
+  - component: {fileID: 1977396811}
   m_Layer: 0
   m_Name: Animal_Stag_01
   m_TagString: Untagged
@@ -821,6 +822,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &1977396811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954496928992893695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d87c142ca1ee9428786d747b8af18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7954496928992912241
 GameObject:
   m_ObjectHideFlags: 0
