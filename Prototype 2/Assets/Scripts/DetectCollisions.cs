@@ -5,20 +5,10 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // When the object collides with an other object
     private void OnTriggerEnter(Collider other)
     {
+        // Destroy both objects
         Destroy(gameObject);
         Destroy(other.gameObject);
     }
