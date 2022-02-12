@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody playerRb;
+    private Rigidbody _playerRb;
+    private Animator _playerAnim;
     public float jumpForce = 10.0f;
     public float gravityModifier;
     public bool isOnGround = true;
@@ -14,8 +15,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Get the Rigidbody from the player
-        playerRb = GetComponent<Rigidbody>();
+        // Get the Rigidbody & Animator from the player
+        _playerRb = GetComponent<Rigidbody>();
+        _playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
     }
 
@@ -24,8 +26,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            _playerAnim.SetTrigger("Jump_trig");
         }
     }
 
