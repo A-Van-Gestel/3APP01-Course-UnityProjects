@@ -7,6 +7,7 @@ public class PlayerControllerX : MonoBehaviour
     public bool gameOver;
 
     public float floatForce;
+    public float maxHeight = 16.0f;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
 
@@ -36,7 +37,7 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && transform.position.y < maxHeight)
         {
             playerRb.AddForce(Vector3.up * floatForce);
         }
