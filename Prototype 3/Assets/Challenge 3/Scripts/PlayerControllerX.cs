@@ -8,6 +8,7 @@ public class PlayerControllerX : MonoBehaviour
 
     public float floatForce;
     public float maxHeight = 16.0f;
+    public float bounceForce = 10.0f;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
 
@@ -17,6 +18,7 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public AudioClip bounceSound;
 
 
     // Start is called before the first frame update
@@ -61,7 +63,12 @@ public class PlayerControllerX : MonoBehaviour
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
-
+        }
+        
+        else if (other.gameObject.CompareTag("Ground") && !gameOver)
+        {
+            playerAudio.PlayOneShot(bounceSound, 1.0f);
+            playerRb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
         }
 
     }
