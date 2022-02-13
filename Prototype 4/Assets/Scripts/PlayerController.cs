@@ -6,17 +6,19 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
     private Rigidbody _playerRb;
+    private GameObject _focalPoint;
     
     // Start is called before the first frame update
     void Start()
     {
         _playerRb = GetComponent<Rigidbody>();
+        _focalPoint = GameObject.Find("Focal Point");
     }
 
     // Update is called once per frame
     void Update()
     {
         float forwardInput = Input.GetAxis("Vertical");
-        _playerRb.AddForce(Vector3.forward * forwardInput * speed);
+        _playerRb.AddForce(_focalPoint.transform.forward * forwardInput * speed);
     }
 }
