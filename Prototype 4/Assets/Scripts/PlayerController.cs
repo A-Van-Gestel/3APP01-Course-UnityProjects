@@ -31,9 +31,18 @@ public class PlayerController : MonoBehaviour
         {
             hasPowerup = true;
             Destroy(other.gameObject);
+            // Start an other thread running the PowerupCountdownRoutine
+            StartCoroutine(PowerupCountdownRoutine());
         }
     }
 
+    // Countdown timer outside of the Update loop using Coroutines
+    IEnumerator PowerupCountdownRoutine()
+    {
+        yield return new WaitForSeconds(7);
+        hasPowerup = false;
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && hasPowerup)
