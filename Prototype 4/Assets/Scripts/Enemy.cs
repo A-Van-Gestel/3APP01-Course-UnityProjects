@@ -18,7 +18,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Add force to the calculated vector (direction to the player)
-        _enemyRb.AddForce((_player.transform.position - transform.position).normalized * speed);
+        // Calculate the direction to the player
+        Vector3 lookDirection = (_player.transform.position - transform.position).normalized;
+        // Add force to the calculated vector
+        _enemyRb.AddForce(lookDirection * speed);
     }
 }
