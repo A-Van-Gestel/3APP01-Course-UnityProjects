@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
+    public bool hasPowerup = false;
     private Rigidbody _playerRb;
     private GameObject _focalPoint;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,14 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         _playerRb.AddForce(_focalPoint.transform.forward * forwardInput * speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+        }
     }
 }
