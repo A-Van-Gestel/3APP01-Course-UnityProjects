@@ -45,6 +45,12 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        
+        // Trigger game over when any objects that isn't a bad one falls below the screen
+        if (!gameObject.CompareTag("Bad"))
+        {
+            _gameManager.GameOver();
+        }
     }
 
     Vector3 RandomForce()
