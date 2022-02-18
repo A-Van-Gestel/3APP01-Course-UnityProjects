@@ -18,16 +18,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
-        _score = 0;
-        StartCoroutine(SpawnTarget());
-        UpdateScore(0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator SpawnTarget()
@@ -58,4 +55,13 @@ public class GameManager : MonoBehaviour
         // Reloads the current active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void StartGame()
+    {
+        isGameActive = true;
+        _score = 0;
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+    }
+
 }
