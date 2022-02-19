@@ -648,10 +648,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  horsePower: 12000
+  rpm: 0
+  horsePower: 7500
   centerOfMass: {fileID: 692675425}
   speedometerText: {fileID: 633160006}
   rpmText: {fileID: 2061828903}
+  allWheels:
+  - {fileID: 2038981789}
+  - {fileID: 1973892154}
+  - {fileID: 2110341317}
+  - {fileID: 1016695657}
+  wheelsOnGround: 0
 --- !u!4 &540419823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 489324, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
@@ -665,7 +672,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540419818}
   serializedVersion: 2
-  m_Mass: 500
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -971,7 +978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692675425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.32, z: -0.95}
+  m_LocalPosition: {x: 0, y: 1.087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 540419823}
