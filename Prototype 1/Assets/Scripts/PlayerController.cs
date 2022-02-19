@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Private Variables
-    private float speed = 12.0f;
-    private float turnSpeed = 35.0f;
+    [SerializeField] private float speed = 12.0f;
+    private const float TurnSpeed = 35.0f;
     private float _horizontalInput;
     private float _forwardInput;
     
@@ -26,6 +26,6 @@ public class PlayerController : MonoBehaviour
         // Move the vehicle forward
         transform.Translate(Vector3.forward * Time.deltaTime * speed * _forwardInput);
         // We turn the vehicle
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * _horizontalInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * TurnSpeed * _horizontalInput);
     }
 }
